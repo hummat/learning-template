@@ -43,10 +43,16 @@ if [[ -d "$ROOT/src/PLACEHOLDER" ]]; then
     echo "Renamed src/PLACEHOLDER/ -> src/$PKG/"
 fi
 
+# Recreate agent symlinks (in case copy didn't preserve them)
+cd "$ROOT"
+ln -sf AGENTS.md CLAUDE.md
+ln -sf AGENTS.md GEMINI.md
+echo "Created CLAUDE.md -> AGENTS.md and GEMINI.md -> AGENTS.md symlinks"
+
 echo
 echo "Done. Next steps:"
 echo "  1. Edit references.md with your reading list"
 echo "  2. Edit scripts/download_papers.py with arXiv IDs"
-echo "  3. Edit CLAUDE.md with notebook progression"
+echo "  3. Edit AGENTS.md with notebook progression"
 echo "  4. Run: uv sync --dev"
 echo "  5. Run: python scripts/download_papers.py"

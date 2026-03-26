@@ -9,3 +9,5 @@ build/
 .pyright/
 uv.lock
 references/papers/
+CLAUDE.md
+GEMINI.md
