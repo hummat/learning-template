@@ -1,14 +1,16 @@
-# TOPIC_NAME
+# __TOPIC__
 
-Personal learning repo for understanding TOPIC from scratch.
+Personal learning repo for understanding __TOPIC__ from scratch.
 
 ## Project Structure
 
 ```
-src/PLACEHOLDER/     # shared library (reusable utilities across notebooks)
-notebooks/           # Marimo notebooks (one per concept, numbered by progression)
-references/          # papers (PDFs, gitignored) + blog summaries (markdown)
-scripts/             # download_papers.py and other utilities
+src/__PKG__/              # shared library (reusable utilities across notebooks)
+notebooks/                # Marimo notebooks (one per concept, numbered by progression)
+references/               # papers (PDFs, gitignored) + blog summaries (markdown)
+scripts/                  # download_papers.py and other utilities
+docs/superpowers/specs/   # design specs
+docs/superpowers/plans/   # implementation plans
 ```
 
 ## Key Docs
@@ -24,7 +26,7 @@ scripts/             # download_papers.py and other utilities
 
 ## Stack
 
-- **Python 3.11+**, PyTorch, Marimo, Matplotlib
+- **Python 3.11+**, Marimo, Matplotlib, NumPy (PyTorch optional via `[ml]`)
 - **uv** for dependency management, editable install
 - No heavy frameworks — build from scratch
 
@@ -36,6 +38,7 @@ uv run pytest -v                           # run tests
 uv run marimo edit notebooks/01_topic.py   # open notebook
 uv run ruff check src/ tests/              # lint
 python scripts/download_papers.py          # download papers
+python scripts/init_project.py <pkg> "<description>"  # initialize from template
 ```
 
 ## Philosophy

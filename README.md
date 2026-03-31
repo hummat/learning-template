@@ -7,7 +7,7 @@ Based on the pattern established in [diffusion-explorer](../diffusion-explorer/)
 ## What You Get
 
 ```
-src/PLACEHOLDER/        # shared library — rename via init script
+src/__PKG__/            # shared library — rename via init script
 notebooks/              # Marimo notebooks, numbered by progression
 references/
   papers/               # PDFs (gitignored, re-downloadable)
@@ -15,8 +15,11 @@ references/
 references.md           # reading order + resource-to-notebook mapping
 scripts/
   download_papers.py    # bulk arXiv PDF downloader
-  init_project.sh       # rename PLACEHOLDER -> your package name
-CLAUDE.md               # agent context for the learning repo
+  init_project.py       # rename placeholders -> your names
+docs/superpowers/
+  specs/                # design specs (brainstorming output)
+  plans/                # implementation plans
+AGENTS.md               # agent context (CLAUDE.md, GEMINI.md are symlinks)
 ```
 
 ## Quick Start
@@ -27,7 +30,7 @@ cp -r ~/git/learning-template ~/git/my-topic-explorer
 cd ~/git/my-topic-explorer
 
 # 2. Initialize with your package name
-./scripts/init_project.sh mypkg "Understanding topic X from scratch"
+python scripts/init_project.py mypkg "Understanding topic X from scratch"
 
 # 3. Initialize git
 git init && git add -A && git commit -m "Initial scaffold from learning-template"
@@ -45,11 +48,13 @@ uv run marimo edit notebooks/01_first_topic.py
 
 ## The Workflow
 
-1. **Curate references first.** Reading order, paper-to-notebook mapping. This is the learning plan.
-2. **Download papers.** Add arXiv IDs to `scripts/download_papers.py`, run it.
-3. **Save blog summaries.** One markdown file per blog in `references/blogs/`: URL, summary, "why this matters for the repo."
-4. **Build the shared library.** Reusable utilities in `src/`, tested with pytest.
-5. **Write notebooks.** One Marimo notebook per concept, numbered by progression. Import from the shared library, focus on narrative and visualization.
+1. **Write a design spec.** What are you learning, why, and in what order? Save to `docs/superpowers/specs/`. This is the foundation.
+2. **Curate references.** Reading order, paper-to-notebook mapping in `references.md`. This is the learning plan.
+3. **Download papers.** Add arXiv IDs to `scripts/download_papers.py`, run it.
+4. **Save blog summaries.** One markdown file per blog in `references/blogs/`: URL, summary, "why this matters for the repo."
+5. **Write an implementation plan.** Break the spec into concrete steps. Save to `docs/superpowers/plans/`.
+6. **Build the shared library.** Reusable utilities in `src/`, tested with pytest.
+7. **Write notebooks.** One Marimo notebook per concept, numbered by progression. Import from the shared library, focus on narrative and visualization.
 
 ## Conventions
 
@@ -61,4 +66,9 @@ uv run marimo edit notebooks/01_first_topic.py
 
 ## Customization
 
-The `pyproject.toml` comes with `torch`, `marimo`, `matplotlib`, `numpy` as default dependencies. Adjust to your topic — swap torch for jax, add plotly, remove what you don't need.
+The `pyproject.toml` comes with `marimo`, `numpy`, `matplotlib` as base dependencies. Optional groups:
+
+- `uv sync --dev --extra ml` — adds PyTorch
+- `uv sync --dev --extra viz` — adds Plotly for interactive plots
+
+Adjust to your topic — swap groups, add libraries, remove what you don't need.

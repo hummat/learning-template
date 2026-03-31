@@ -3,18 +3,19 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "PLACEHOLDER"
+name = "__PKG__"
 version = "0.0.1"
-description = "DESCRIPTION"
+description = "__DESCRIPTION__"
 requires-python = ">=3.11"
 dependencies = [
-    "torch>=2.0",
     "marimo[recommended]",
     "matplotlib>=3.7",
     "numpy>=1.24",
 ]
 
 [project.optional-dependencies]
+ml = ["torch>=2.0"]
+viz = ["plotly>=5.0"]
 dev = [
     "pytest>=8.3.0",
     "ruff>=0.6.0",
@@ -29,7 +30,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/PLACEHOLDER"]
+packages = ["src/__PKG__"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -44,7 +45,7 @@ src = ["src"]
 select = ["E", "F", "I", "B"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["PLACEHOLDER"]
+known-first-party = ["__PKG__"]
 
 [tool.pyright]
 include = ["src", "tests"]
