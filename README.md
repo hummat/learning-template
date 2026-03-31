@@ -49,7 +49,7 @@ uv run marimo edit notebooks/01_first_topic.py
 ## The Workflow
 
 1. **Write a design spec.** What are you learning, why, and in what order? Save to `docs/superpowers/specs/`. This is the foundation.
-2. **Curate references.** Reading order, paper-to-notebook mapping in `references.md`. This is the learning plan.
+2. **Curate references.** Phased reading order in `references.md` — one phase per notebook, with depth guidance. This is the learning plan.
 3. **Download papers.** Add arXiv IDs to `scripts/download_papers.py`, run it.
 4. **Save blog summaries.** One markdown file per blog in `references/blogs/`: URL, summary, "why this matters for the repo."
 5. **Write an implementation plan.** Break the spec into concrete steps. Save to `docs/superpowers/plans/`.

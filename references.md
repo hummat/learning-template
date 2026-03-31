@@ -1,14 +1,33 @@
 # References
 
-## Reading Order
+## Reading → Implementation Order
 
-Start here. Each entry builds on the previous.
+Read, then implement — per phase. Don't read everything before coding.
 
-| # | Resource | Type | What you learn |
-|---|----------|------|---------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+### Phase 1 → NB01: NOTEBOOK_01
+
+| # | Resource | Type | What you learn | Depth |
+|---|----------|------|---------------|-------|
+| 1 | | | | Read fully |
+| 2 | | | | Skim §X |
+
+<!-- Which resources are sufficient to implement? Which deepen understanding but aren't prerequisites? -->
+
+### Phase 2 → NB02: NOTEBOOK_02
+
+| # | Resource | Type | What you learn | Depth |
+|---|----------|------|---------------|-------|
+| 3 | | | | Read fully |
+
+<!-- Same: what's the minimum viable reading to start coding? -->
+
+### Phase 3 → NB03: NOTEBOOK_03
+
+| # | Resource | Type | What you learn | Depth |
+|---|----------|------|---------------|-------|
+| 4 | | | | Read fully |
+
+---
 
 ## Papers (local PDFs in `references/papers/`)
 
@@ -26,7 +45,9 @@ Save a summary markdown file per blog post: URL, date, summary, "why this matter
 |------|------|--------|------|
 | | | | |
 
-## Resource -> Notebook Mapping
+## Complete Paper → Notebook Mapping
+
+The phases above list the minimum reading per notebook. This table is the exhaustive reference.
 
 | Notebook | Primary papers | Primary blogs |
 |----------|---------------|--------------|
