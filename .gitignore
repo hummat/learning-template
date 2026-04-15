@@ -11,3 +11,5 @@ uv.lock
 references/papers/
 CLAUDE.md
 GEMINI.md
+
+.claude/settings.local.json
