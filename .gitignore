@@ -9,7 +9,10 @@ build/
 .pyright/
 uv.lock
 references/papers/
+references/blogs/*.pdf
 CLAUDE.md
 GEMINI.md
+HANDOFF.md
+.remember/
 
 .claude/settings.local.json

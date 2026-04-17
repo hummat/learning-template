@@ -1,0 +1,59 @@
+# Handoff
+
+> Copy to `HANDOFF.md` (gitignored) at session end. Skeleton below —
+> fill in only the sections that apply.
+
+**From:** <model + harness, e.g. Claude Opus 4.7 (Claude Code CLI)>
+**Date:** <YYYY-MM-DD>
+
+## Task
+
+<One paragraph: what this repo is, where it is in its lifecycle, what the session accomplished or set up.>
+
+## Current State
+
+- <Scaffolding vs implementation status; which modules/notebooks exist; which have tests>
+- <Scope flags: anything cut, anything reduced, anything deliberately deferred>
+- <Infra hygiene: pyproject, gitignore, symlinks, reference material downloaded>
+- <Answer-key state (if this repo uses the `~/.local/share/<name>-answer-key/` pattern)>
+
+## Session Context
+
+<Non-obvious decisions or corrections made this session that aren't captured in the code. These are the things a fresh agent would otherwise have to rediscover. Write as prose, not bullets.>
+
+<Examples of what belongs here:>
+- <Critical scope correction that happened this session — include the "why", not just the "what">
+- <Which document is *more* load-bearing than the spec/plan for strategy discussions>
+- <Things NOT to propose or re-argue>
+
+## Next Steps (concrete, for the user)
+
+<Ordered, actionable. First action = first command. Each step is one session's worth of work, not a month.>
+
+1. <Env setup + smoke test>
+2. <First reading (point at local PDFs if downloaded)>
+3. <First implementation task (TDD pattern if applicable)>
+4. <End-of-day verification>
+
+## Do NOT
+
+<Explicit negative guidance. The things a future agent will be tempted to do and should not.>
+
+- <Don't re-add cut notebooks or modules>
+- <Don't copy answer-key code back in-tree>
+- <Don't add test files for modules deliberately left untested>
+- <Don't open the answer key until your own attempt fails>
+
+## Key Files
+
+- **Spec:** `docs/superpowers/specs/...`
+- **Plan:** `docs/superpowers/plans/...` (intent only, no reference code)
+- **Answer key (out of tree):** `~/.local/share/<repo-name>-answer-key/`
+- **References:** `references.md` + `references/papers/` + `references/blogs/`
+- **Agent context:** `AGENTS.md` (symlinked to `CLAUDE.md`, `GEMINI.md`)
+- **Memory:** `~/.claude/projects/<encoded-path>/memory/`
+- **External context:** <any out-of-repo notes the user maintains>
+
+## Why Switching
+
+<End of session / capability gap / context full / other. One line.>

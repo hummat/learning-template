@@ -16,11 +16,6 @@ dependencies = [
 [project.optional-dependencies]
 ml = ["torch>=2.0"]
 viz = ["plotly>=5.0"]
-dev = [
-    "pytest>=8.3.0",
-    "ruff>=0.6.0",
-    "pyright>=1.1.385",
-]
 
 [dependency-groups]
 dev = [
